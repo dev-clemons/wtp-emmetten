@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: dracula
+theme: bricks
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://source.unsplash.com/collection/94734566/1920x1080
@@ -71,31 +71,32 @@ code: |
       koch(100, 4)
 ---
 
-# What is WebTigerPython? 🐯🐍
+# WebTigerPython🐯🐍 - Programming in the browser
 
-- Educational IDE
-- Turtle Robotics and More
-- Runs completely in the web browser
-- No installation required
-- Code examples for today: 
-
+- New Features
+- Hands-on Examples
+- Code skeletons
+- https://linktr.ee/webtp
 ---
-layout: two-cols
+layout: two-cols-header
 ---
 
 # Features of WTP 🛠️
 
 ::left::
 
+<img src="./images/turtle.png" width=150/>
 Visual Computing (turtle, gpanel, pygame)
 
+<img src="./images/maqueelplusv3.png" width=150/>
 Robotics (WebUSB, simulation)
 
 ::right::
 
+<img src="./images/databases.png" width=300/>
 Databases (sqlite3, database1)
 
-
+<img src="./images/debugger.png" width=200/>
 Debugger
 
 ---
@@ -106,7 +107,7 @@ code: |
   pygame.examples.chimp.main()
 ---
 
-# PyGame 🎮
+<img src="./images/pygame_ce_logo.svg" width=380/>
 
 - Popular library for programming games
 - Sounds, images, animations
@@ -115,6 +116,8 @@ code: |
 
 *asynchronity issue
 
+---
+layout: two-cols-header
 ---
 
 # Asynchronity Problem
@@ -129,6 +132,10 @@ code: |
 
 ::right:: -->
 
+::left::
+<img src="./images/runtime-environment-diagram.svg" width=380/>
+
+::right::
 ### Synchronous Execution in Browser
 
 ```mermaid
@@ -292,6 +299,26 @@ code: |
   - use x.colliderect(y) to check if there is a collision
 - Implement alien movement
 - Have fun!
+- [linktr.ee/webtp](https://linktr.ee/webtp)
+
+---
+layout: wtp-2-cols
+code: |
+    import pygame
+    pygame.examples.aliens.main()
+---
+# Pygame Aliens Example
+---
+layout: two-cols-header
+---
+
+# Maqueen Plus V3 Lidar
+
+::left::
+<img src="./images/lidar1.png" width=300/>
+
+::right::
+<img src="./images/lidar2.png" width=300/>
 
 ---
 layout: wtp-2-cols
@@ -310,9 +337,16 @@ code: |
 device: micro:bit
 ---
 
-# Maqueen Plus V3 Lidar
+## Maqueen Plus V3 Lidar - Hands on
 
-- Follow the Wall
+- Get a micro:bit Maqueen Plus V3 Robot
+- Get a micro:bit
+- Screw the lidar sensor on top
+- Exercise: Follow the Wall
+    - getDistanceGrid() - gets the distance grid (slow)
+    - getDistanceAt(x,y) - gets the distance at a specific coordinate (fast)
+    - forward(), left(), right(), leftArc(radius), rightArc(radius)
+
 - [Solution](https://webtigerpython.ethz.ch/#?code=NobwRAdghgtgpmAXGGUCWEB0AHAnmAGjABMoAXKJMAMwCcB7GAAhgCMHX6yB9bAGwCuAZwBqAZiZoY2erTJMAVEwA6EVULhkAytjhxiACgCMABhMBKVatpxd5RKqZOm1I0wC8TAOaaAImiEKCABjOABBMgMAFgILR2dqACYPbz8AoNCIgzECMUs1CGcmbFoMSNcCJPz4pzRqFzcAPiYxE0QiopqOvjhqMjDaYIMTTCj8org-OpdkgB4mRLauotKvAAtI8edJjQdCjqdqWQB3KFpDLadiSahcYzMLMABfAF0gA&device=micro%3Abit&playground=N4IgygLghgThBCB7AHiAXAbQGwCYAcAdFsQOwAsAzFgIxYAMAnGQKwA0We1BDWFzFJEswY5%2BbOgF1WIeABtEAYwDWiAEYArAKYKIAZ3QYMtStxzUcdamUtkcg1tWoUGBPjTp0OTz6wBmUWV1NVkkpEAB1APkNbT0DbCdWfjJWOzpWMikMMjx0hhJ0vD5UrLw8EgdnFJIeEKzzIQdzLCTqPHZ63BxWPCwKknM61gwRClYa9LIGMZxSihTmHBSrBgyJMIAHWSgATwBzGEQAVwA7ABMwAEsAL00DCw9Uj0kAXyA) 
 
 <!-- <v-clicks>
@@ -358,6 +392,13 @@ code: |
 ---
 
 # Robotics with Micro:bit - Intersections
+
+- Does not work in the simulator
+- Code skeleton follows the line
+- Exercise 1:
+    Turn on type 2 intersection
+- Exercise 2:
+    Go left on four way intersection
 
 ---
 

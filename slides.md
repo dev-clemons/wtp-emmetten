@@ -91,6 +91,8 @@ Visual Computing (turtle, gpanel, pygame)
 <img src="./images/maqueelplusv3.png" width=150/>
 Robotics (WebUSB, simulation)
 
+[python-online.ch/](https://python-online.ch/)
+
 ::right::
 
 <img src="./images/databases.png" width=300/>
@@ -399,10 +401,6 @@ code: |
     Turn on type 2 intersection
 - Exercise 2:
     Go left on four way intersection
-
----
-
-# Survey
 
 ---
 

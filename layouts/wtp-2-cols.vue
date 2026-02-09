@@ -30,6 +30,10 @@ const props = defineProps({
     type: String,
     default: ''
   },
+  base: {
+    type: String,
+    default: "https://webtigerpython.ethz.ch"
+  }
   
 });
 
@@ -40,7 +44,7 @@ function encodeInputCode(inputCode) {
     return base64compressed; // step 5
 }
 
-let base = "https://webtigerpython.ethz.ch"
+let base = props.base
 let encodedCode = encodeInputCode(props.code)
 let url = new URL(base);
 url.searchParams.append("code", encodedCode);
@@ -48,7 +52,6 @@ url.searchParams.append("device", props.device)
 if(props.wtpLayout){
   url.searchParams.append("layout", props.wtpLayout)
 }
-console.log(url.href)
 </script>
 
 <style>

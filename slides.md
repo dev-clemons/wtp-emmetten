@@ -45,6 +45,24 @@ layout: two-cols-header
 [Illustration by Anna Staub](https://www.instagram.com/anna.staub.illustration/?hl=en)
 
 ---
+layout: two-cols-header
+---
+
+# What is WebTigerPython
+
+::left::
+- Educational IDE
+- Web Based
+- Modern Python (3.13)
+- Frontend code execution
+    - No internet connection required
+- Small to medium sized school projects
+- NOT VSCode
+
+::right::
+<img src="./images/tigerjython-icon.svg" width=300/>
+
+---
 layout: wtp-2-cols
 code: |
   # Koch.py
@@ -75,8 +93,7 @@ code: |
 
 - New Features
 - Hands-on Examples
-- Code skeletons
-- https://linktr.ee/webtp
+
 ---
 layout: two-cols-header
 ---
@@ -194,7 +211,7 @@ import asyncio
 async def render():
      #...
     display.flip()
-    await asyncio.sleep(0)(0)
+    await asyncio.sleep(0)
 
 def updateActors():
     #...
@@ -214,7 +231,7 @@ import asyncio
 async def render():
      #...
     display.flip()
-    await asyncio.sleep(0)(0)
+    await asyncio.sleep(0)
 
 async def updateActors():
     #...
@@ -234,7 +251,7 @@ import asyncio
 async def render():
      #...
     display.flip()
-    await asyncio.sleep(0)(0)
+    await asyncio.sleep(0)
 
 async def updateActors():
     #...
@@ -248,6 +265,12 @@ async def main():
 await main()
 ```
 ````
+<v-click>
+
+-> This is done by WTP
+
+</v-click>
+
 
 ---
 layout: wtp-2-cols
@@ -300,8 +323,8 @@ code: |
 - Implement simple collision detection
   - use x.colliderect(y) to check if there is a collision
 - Implement alien movement
+- Codeskeleton -> Moodle
 - Have fun!
-- [linktr.ee/webtp](https://linktr.ee/webtp)
 
 ---
 layout: wtp-2-cols
@@ -324,91 +347,57 @@ layout: two-cols-header
 
 ---
 layout: wtp-2-cols
-code: |
-    from mbrobot_plusV3 import * 
-
-    setSpeed(100)
-
-    repeat:
-        # Very fast
-        f1 = getDistanceAt(0,0)
-        # Rather slow
-        grid = getDistanceGrid()
-        print(f1,grid)
-        delay(1000)
 device: micro:bit
----
-
-## Maqueen Plus V3 Lidar - Hands on
-
-- Get a micro:bit Maqueen Plus V3 Robot
-- Get a micro:bit
-- Screw the lidar sensor on top
-- Exercise: Follow the Wall
-    - getDistanceGrid() - gets the distance grid (slow)
-    - getDistanceAt(x,y) - gets the distance at a specific coordinate (fast)
-    - forward(), left(), right(), leftArc(radius), rightArc(radius)
-
-- [Solution](https://webtigerpython.ethz.ch/#?code=NobwRAdghgtgpmAXGGUCWEB0AHAnmAGjABMoAXKJMAMwCcB7GAAhgCMHX6yB9bAGwCuAZwBqAZiZoY2erTJMAVEwA6EVULhkAytjhxiACgCMABhMBKVatpxd5RKqZOm1I0wC8TAOaaAImiEKCABjOABBMgMAFgILR2dqACYPbz8AoNCIgzECMUs1CGcmbFoMSNcCJPz4pzRqFzcAPiYxE0QiopqOvjhqMjDaYIMTTCj8org-OpdkgB4mRLauotKvAAtI8edJjQdCjqdqWQB3KFpDLadiSahcYzMLMABfAF0gA&device=micro%3Abit&playground=N4IgygLghgThBCB7AHiAXAbQGwCYAcAdFsQOwAsAzFgIxYAMAnGQKwA0We1BDWFzFJEswY5%2BbOgF1WIeABtEAYwDWiAEYArAKYKIAZ3QYMtStxzUcdamUtkcg1tWoUGBPjTp0OTz6wBmUWV1NVkkpEAB1APkNbT0DbCdWfjJWOzpWMikMMjx0hhJ0vD5UrLw8EgdnFJIeEKzzIQdzLCTqPHZ63BxWPCwKknM61gwRClYa9LIGMZxSihTmHBSrBgyJMIAHWSgATwBzGEQAVwA7ABMwAEsAL00DCw9Uj0kAXyA) 
-
-<!-- <v-clicks>
-
-- Compact educational microcontroller
-- Python programmable
-- Built-in sensors
-  - Accelerometer
-  - Temperature
-  - Compass
-
-</v-clicks> -->
-
----
-layout: wtp-2-cols
+leftWidth: 30%
 code: |
-    from mbrobot_plusV3 import * 
+    from mbrobot_plusV3 import *
 
-    setSpeed(100)
-    repeat:
-        l = not irLeft.read_digital()
-        r = not irRight.read_digital()
-        m = not irM.read_digital()
-        if m:
-            forward()
-        elif l:
-            print("right")
-            leftArc(0.1)
-        elif r:
-            rightArc(0.1)
-        else:
-            left()
-        x = intersectionDetecting()
-        ## Exercise 1:
-        # Turm on type 2
-        #  four Way: 1
-        #  T: 2
-        #  |-: 3
-        #  -| : 4
-        # Exercise 2:
-        # go left on four way intersection
+    def showMap(matrix):
+        for row in matrix:
+            line = ""
+            for val in row:
+                if val < 30:
+                    line += " X "
+                elif val < 60:
+                    line += " x "
+                elif val < 100:
+                    line += " - "
+                elif val < 150:
+                    line += " . "
+                else:
+                    line += " "
+            print(line)
+        print("")    
+
+    while True:
+        matrix = getDistanceGrid()
+        showMap(matrix)
+        delay(3000)
 
 ---
+# Lidar Simulator Example
+---
+base: https://exp.webtigerpython.ethz.ch
+layout: wtp-2-cols
+leftWidth: 30%
+code: |
+    import pygame
+    pygame.examples.aliens.main()
+---
 
-# Robotics with Micro:bit - Intersections
+# Multifile Mode
 
-- Does not work in the simulator
-- Code skeleton follows the line
-- Exercise 1:
-    Turn on type 2 intersection
-- Exercise 2:
-    Go left on four way intersection
+<v-clicks>
+
+- Try it out
+- Groups of 2 - create a small multifile task and implement it
+- exp.webtigerpython.ethz.ch (experimental)
+
+</v-clicks>
 
 ---
 
 # WebTigerPython - The Future 🚀
 
-- Improve simulator
-- Multifile projects
-- Git / OneDrive integration
-- More libraries
-- Reach out to me!
-- Thank you
+- REPL?
+- Robots?

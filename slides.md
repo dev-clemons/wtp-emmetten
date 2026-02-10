@@ -118,6 +118,24 @@ Databases (sqlite3, database1)
 <img src="./images/debugger.jpg" width=200/>
 
 ---
+base: https://exp.webtigerpython.ethz.ch
+layout: wtp-2-cols
+leftWidth: 30%
+code: |
+    import pygame
+    pygame.examples.aliens.main()
+---
+
+# Multifile Mode
+
+<v-clicks>
+
+- Try it out
+- Groups of 2 - create a small multifile task and implement it
+- exp.webtigerpython.ethz.ch (experimental)
+
+</v-clicks>
+---
 layout: wtp-2-cols
 wtpLayout: '["Editor", "Console"]'
 leftWidth: 30%
@@ -394,24 +412,6 @@ code: |
 
 ---
 # Lidar Simulator Example
----
-base: https://exp.webtigerpython.ethz.ch
-layout: wtp-2-cols
-leftWidth: 30%
-code: |
-    import pygame
-    pygame.examples.aliens.main()
----
-
-# Multifile Mode
-
-<v-clicks>
-
-- Try it out
-- Groups of 2 - create a small multifile task and implement it
-- exp.webtigerpython.ethz.ch (experimental)
-
-</v-clicks>
 
 ---
 

@@ -134,7 +134,6 @@ code: |
 ---
 # Debugger
 
-- Not optimal for large lists
 - Inspired by Python Tutor
 
 ---

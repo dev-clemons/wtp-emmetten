@@ -116,7 +116,26 @@ Robotics (WebUSB, simulation)
 Databases (sqlite3, database1)
 
 <img src="./images/debugger.jpg" width=200/>
-Debugger
+
+---
+layout: wtp-2-cols
+wtpLayout: '["Editor", "Console"]'
+leftWidth: 30%
+code: |
+    def calculate_list_sum(numbers):
+        sum = 0
+        for i in numbers:
+            sum += i
+        return sum
+
+    my_list = [1, 2, 3, 4, 5]
+    result = calculate_list_sum(my_list)
+    print(result)
+---
+# Debugger
+
+- Not optimal for large lists
+- Inspired by Python Tutor
 
 ---
 layout: wtp-2-cols
